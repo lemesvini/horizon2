@@ -7,7 +7,6 @@ import Table from "react-bootstrap/Table";
 import { Dropdown } from "react-bootstrap";
 import { collection, getDocs, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { auth, db } from "@/firebase";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 interface ClassRecord {
   id: string;

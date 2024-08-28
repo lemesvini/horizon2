@@ -5,7 +5,6 @@ import Sidebar from "../../components/Sidebar";
 import Table from "react-bootstrap/Table";
 import { Button } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "bootstrap/dist/css/bootstrap.min.css";
 import { faLink, faRotateRight } from "@fortawesome/free-solid-svg-icons";
 import {
   AlertDialog,
