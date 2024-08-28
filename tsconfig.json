@@ -35,7 +35,8 @@
     "**/*.tsx",
     ".next/types/**/*.ts",
     "src/app/login/student",
-    "dist/types/**/*.ts"
+    "dist/types/**/*.ts",
+    "src"
   ],
   "exclude": [
     "node_modules"
