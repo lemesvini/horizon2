@@ -16,10 +16,17 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { collection, getDocs, doc, setDoc, deleteDoc } from "firebase/firestore";
+import {
+  collection,
+  getDocs,
+  doc,
+  setDoc,
+  deleteDoc,
+} from "firebase/firestore";
 import { auth, db } from "@/firebase"; // Adjust the import based on your file structure
 import Router from "next/navigation";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 // Define the Student type
 interface Student {
@@ -50,9 +57,12 @@ export default function TStudents() {
   const [isAddStudentDialogOpen, setIsAddStudentDialogOpen] = useState(false);
   const [isStudentAddedConfirmationOpen, setIsStudentAddedConfirmationOpen] =
     useState(false);
-  const [isAddClassRecordDialogOpen, setIsAddClassRecordDialogOpen] = useState(false);
-  const [isClassRecordAddedConfirmationOpen, setIsClassRecordAddedConfirmationOpen] =
+  const [isAddClassRecordDialogOpen, setIsAddClassRecordDialogOpen] =
     useState(false);
+  const [
+    isClassRecordAddedConfirmationOpen,
+    setIsClassRecordAddedConfirmationOpen,
+  ] = useState(false);
   const [newStudent, setNewStudent] = useState<Student>({
     name: "",
     module: "",
@@ -78,9 +88,16 @@ export default function TStudents() {
     const userEmail = user.email;
     const fetchStudents = async () => {
       try {
-        const studentsCollectionRef = collection(db, "students", "user", userEmail);
+        const studentsCollectionRef = collection(
+          db,
+          "students",
+          "user",
+          userEmail
+        );
         const studentDocs = await getDocs(studentsCollectionRef);
-        const studentList = studentDocs.docs.map((doc) => doc.data() as Student);
+        const studentList = studentDocs.docs.map(
+          (doc) => doc.data() as Student
+        );
 
         setStudents(studentList);
       } catch (error) {
@@ -119,8 +136,20 @@ export default function TStudents() {
         throw new Error("User is not authenticated");
       }
 
-      const studentDocRef = doc(db, "students", "user", user.email, newStudent.name);
-      const studentLoginRef = doc(db, "students", "user", "login", newStudent.email);
+      const studentDocRef = doc(
+        db,
+        "students",
+        "user",
+        user.email,
+        newStudent.name
+      );
+      const studentLoginRef = doc(
+        db,
+        "students",
+        "user",
+        "login",
+        newStudent.email,
+      );
 
       await setDoc(studentDocRef, newStudent);
       await setDoc(studentLoginRef, newStudent);
@@ -138,7 +167,12 @@ export default function TStudents() {
         callLink: "",
       });
 
-      const studentsCollectionRef = collection(db, "students", "user", user.email);
+      const studentsCollectionRef = collection(
+        db,
+        "students",
+        "user",
+        user.email
+      );
       const studentDocs = await getDocs(studentsCollectionRef);
       const studentList = studentDocs.docs.map((doc) => doc.data() as Student);
 
@@ -213,23 +247,37 @@ export default function TStudents() {
       console.error("No student selected!");
       return;
     }
-  
+
     try {
       if (!user?.email) {
         throw new Error("User is not authenticated");
       }
-  
-      const studentDocRef = doc(db, "students", "user", user.email, selectedStudent.name);
-      const studentLoginRef = doc(db, "students", "user", "login", selectedStudent.email);
-  
+
+      const studentDocRef = doc(
+        db,
+        "students",
+        "user",
+        user.email,
+        selectedStudent.name
+      );
+      const studentLoginRef = doc(
+        db,
+        "students",
+        "user",
+        "login",
+        selectedStudent.email
+      );
+
       await deleteDoc(studentDocRef);
       await deleteDoc(studentLoginRef);
-  
+
       console.log("Student deleted:", selectedStudent.name);
       setIsStudentDetailsDialogOpen(false);
-  
-      setStudents((prevStudents) => prevStudents.filter(student => student.name !== selectedStudent.name));
-  
+
+      setStudents((prevStudents) =>
+        prevStudents.filter((student) => student.name !== selectedStudent.name)
+      );
+
       setSelectedStudent(null);
     } catch (error) {
       console.error("Error deleting student: ", error);
@@ -272,7 +320,7 @@ export default function TStudents() {
                   <th className="hidden">Hourly Price</th>
                   <th className="hidden">Week Classes</th>
                   <th className="hidden">Call Link</th>
-                  <th>Actions</th>
+                  <th className="hidden">Actions</th>
                 </tr>
               </thead>
               <tbody>
@@ -287,7 +335,7 @@ export default function TStudents() {
                     <td className="hidden">{student.hourPrice}</td>
                     <td className="hidden">{student.weekClasses}</td>
                     <td className="hidden">{student.callLink}</td>
-                    <td>
+                    <td className="hidden">
                       <Button
                         variant="danger"
                         onClick={() => handleDeleteStudent()}
@@ -304,101 +352,156 @@ export default function TStudents() {
       </div>
 
       {/* Student Details Dialog */}
-      <AlertDialog open={isStudentDetailsDialogOpen} onOpenChange={setIsStudentDetailsDialogOpen}>
+      <AlertDialog
+        open={isStudentDetailsDialogOpen}
+        onOpenChange={setIsStudentDetailsDialogOpen}
+      >
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Student Details</AlertDialogTitle>
-            <AlertDialogDescription>
-              <div>
-                <p><strong>Name:</strong> {selectedStudent?.name}</p>
-                <p><strong>Module:</strong> {selectedStudent?.module}</p>
-                <p><strong>Email:</strong> {selectedStudent?.email}</p>
-                <p><strong>Hourly Price:</strong> {selectedStudent?.hourPrice}</p>
-                <p><strong>Week Classes:</strong> {selectedStudent?.weekClasses}</p>
-                <p><strong>Call Link:</strong> {selectedStudent?.callLink}</p>
+            <AlertDialogTitle className="py-3 text-2xl">
+              {selectedStudent?.name}
+            </AlertDialogTitle>
+            {selectedStudent?.callLink && (
+              <div className="border-2 border-blue-300 text-blue-500 py-2 rounded-lg flex flex-row gap-2">
+                <div className="border-r-2 border-blue-300 px-2">
+                  <FontAwesomeIcon icon={faLink} />
+                </div>
+                <Link href={selectedStudent.callLink} target="_blank">
+                  {selectedStudent.callLink}
+                </Link>
+              </div>
+            )}
+            <Button
+              variant="outline-success"
+              onClick={handleAddClassRecordDialogOpen}
+            >
+              Add Records
+            </Button>
+            <AlertDialogDescription className="border rounded-lg bg-slate-100">
+              <div className="flex flex-col w-full px-6 py-3 gap-3">
+                <div className="flex justify-between border-b">
+                  <span>
+                    <strong>Module:</strong>
+                  </span>
+                  <span>{selectedStudent?.module}</span>
+                </div>
+                <div className="flex justify-between border-b">
+                  <span>
+                    <strong>Email:</strong>
+                  </span>
+                  <span>{selectedStudent?.email}</span>
+                </div>
+                <div className="flex justify-between border-b">
+                  <span>
+                    <strong>Hourly Price:</strong>
+                  </span>
+                  <span>{selectedStudent?.hourPrice}</span>
+                </div>
+                <div className="flex justify-between border-b">
+                  <span>
+                    <strong>Week Classes:</strong>
+                  </span>
+                  <span>{selectedStudent?.weekClasses}</span>
+                </div>
               </div>
             </AlertDialogDescription>
           </AlertDialogHeader>
+          <hr />
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => setIsStudentDetailsDialogOpen(false)}>
+            <AlertDialogCancel
+              onClick={() => setIsStudentDetailsDialogOpen(false)}
+            >
               Close
             </AlertDialogCancel>
-            <AlertDialogAction onClick={() => handleDeleteStudent()}>
+            <Button
+              variant="outline-danger"
+              onClick={() => handleDeleteStudent()}
+            >
               Delete
-            </AlertDialogAction>
+            </Button>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
 
       {/* Add Student Dialog */}
-      <AlertDialog open={isAddStudentDialogOpen} onOpenChange={setIsAddStudentDialogOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Add Student</AlertDialogTitle>
-            <AlertDialogDescription>
-              <div>
-                <label>
-                  Name:
-                  <input
-                    type="text"
-                    name="name"
-                    value={newStudent.name}
-                    onChange={handleNewStudentChange}
-                  />
-                </label>
-                <label>
-                  Module:
-                  <input
-                    type="text"
-                    name="module"
-                    value={newStudent.module}
-                    onChange={handleNewStudentChange}
-                  />
-                </label>
-                <label>
-                  Email:
-                  <input
-                    type="email"
-                    name="email"
-                    value={newStudent.email}
-                    onChange={handleNewStudentChange}
-                  />
-                </label>
-                <label>
-                  Hourly Price:
-                  <input
-                    type="text"
-                    name="hourPrice"
-                    value={newStudent.hourPrice}
-                    onChange={handleNewStudentChange}
-                  />
-                </label>
-                <label>
-                  Week Classes:
-                  <input
-                    type="text"
-                    name="weekClasses"
-                    value={newStudent.weekClasses}
-                    onChange={handleNewStudentChange}
-                  />
-                </label>
-                <label>
-                  Call Link:
-                  <input
-                    type="text"
-                    name="callLink"
-                    value={newStudent.callLink}
-                    onChange={handleNewStudentChange}
-                  />
-                </label>
+      <AlertDialog
+        open={isAddStudentDialogOpen}
+        onOpenChange={setIsAddStudentDialogOpen}
+      >
+        <AlertDialogContent className="p-6 bg-white rounded-lg shadow-lg">
+          <AlertDialogHeader className="mb-4">
+            <AlertDialogTitle className="text-xl font-semibold text-gray-800">
+              Add Student
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-gray-600">
+              <div className="space-y-4">
+                <input
+                  type="text"
+                  name="name"
+                  value={newStudent.name}
+                  onChange={handleNewStudentChange}
+                  placeholder="Name"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+                <select
+                  name="module"
+                  value={newStudent.module}
+                  onChange={handleNewStudentChange}
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                >
+                  <option value="" disabled>
+                    Select Module
+                  </option>
+                  <option value="A1-A2">A1-A2</option>
+                  <option value="B1">B1</option>
+                  <option value="Conversation">Conversation</option>
+                </select>
+                <input
+                  type="email"
+                  name="email"
+                  value={newStudent.email}
+                  onChange={handleNewStudentChange}
+                  placeholder="Email"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+                <input
+                  type="text"
+                  name="hourPrice"
+                  value={newStudent.hourPrice}
+                  onChange={handleNewStudentChange}
+                  placeholder="Hourly Price"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+                <input
+                  type="text"
+                  name="weekClasses"
+                  value={newStudent.weekClasses}
+                  onChange={handleNewStudentChange}
+                  placeholder="Week Classes"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
+                <input
+                  type="text"
+                  name="callLink"
+                  value={newStudent.callLink}
+                  onChange={handleNewStudentChange}
+                  placeholder="Call Link"
+                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                />
               </div>
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => setIsAddStudentDialogOpen(false)}>
+          <AlertDialogFooter className="mt-4 flex justify-end space-x-2">
+            <AlertDialogCancel
+              onClick={() => setIsAddStudentDialogOpen(false)}
+              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+            >
               Cancel
             </AlertDialogCancel>
-            <AlertDialogAction onClick={handleAddNewStudent}>
+            <AlertDialogAction
+              onClick={handleAddNewStudent}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            >
               Add Student
             </AlertDialogAction>
           </AlertDialogFooter>
@@ -406,46 +509,66 @@ export default function TStudents() {
       </AlertDialog>
 
       {/* Add Class Record Dialog */}
-      <AlertDialog open={isAddClassRecordDialogOpen} onOpenChange={setIsAddClassRecordDialogOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Add Class Record</AlertDialogTitle>
-            <AlertDialogDescription>
-              <div>
-                <label>
+      <AlertDialog
+        open={isAddClassRecordDialogOpen}
+        onOpenChange={setIsAddClassRecordDialogOpen}
+      >
+        <AlertDialogContent className="p-6 bg-white rounded-lg shadow-lg">
+          <AlertDialogHeader className="mb-4">
+            <AlertDialogTitle className="text-xl font-semibold text-gray-800">
+              Add Class Record
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-gray-600">
+              <div className="bg-slate-100 p-4 rounded-lg">
+                <label className="block mb-2">
+                  Name:
+                  <p className="mt-1 block w-full p-2 text-center border border-gray-300 rounded-md bg-gray-100">
+                    {selectedStudent?.name}
+                  </p>
+                </label>
+                <label className="block mb-2">
                   Date:
                   <input
-                    type="text"
+                    type="date"
                     name="date"
                     value={newClassRecord.date}
                     onChange={handleNewClassRecordChange}
+                    className="mt-1 block w-full p-2 text-center border border-gray-300 rounded-md"
                   />
                 </label>
-                <label>
+                <label className="block mb-2">
                   Given Class:
                   <input
                     type="text"
                     name="givenClass"
                     value={newClassRecord.givenClass}
                     onChange={handleNewClassRecordChange}
+                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
                   />
                 </label>
-                <label>
+                <label className="block mb-2">
                   Teacher's Notes:
                   <textarea
                     name="teachersNotes"
                     value={newClassRecord.teachersNotes}
                     onChange={handleNewClassRecordChange}
+                    className="mt-1 block w-full p-2 border border-gray-300 rounded-md"
                   />
                 </label>
               </div>
             </AlertDialogDescription>
           </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => setIsAddClassRecordDialogOpen(false)}>
+          <AlertDialogFooter className="flex justify-end mt-4">
+            <AlertDialogCancel
+              onClick={() => setIsAddClassRecordDialogOpen(false)}
+              className="mr-2 px-4 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300"
+            >
               Cancel
             </AlertDialogCancel>
-            <AlertDialogAction onClick={handleAddNewClassRecord}>
+            <AlertDialogAction
+              onClick={handleAddNewClassRecord}
+              className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
+            >
               Add Class Record
             </AlertDialogAction>
           </AlertDialogFooter>

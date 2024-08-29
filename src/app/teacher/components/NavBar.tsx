@@ -28,7 +28,7 @@ function NavBar() {
           Teacher's Dashboard
         </span>
       </div>
-      <div className="h-full flex items-center mr-6 gap-2">
+      <div className="h-full hidden tablet:flex items-center mr-6 gap-2">
         <Button
           variant="outline-primary"
           onClick={manageAcc}
