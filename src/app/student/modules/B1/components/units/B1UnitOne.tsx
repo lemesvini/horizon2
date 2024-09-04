@@ -3,7 +3,7 @@ import React from "react";
 import CardComp from "@/app/student/components/Card";
 
 export default function B1UnitOne() {
-  const HeaderColor = "#c8e9a0";
+  const HeaderColor = "#84a59d";
   return (
     <>
       <CardComp
@@ -12,7 +12,7 @@ export default function B1UnitOne() {
         content="Complex Sentence Structure"
         color={HeaderColor}
         link="Acessar aula"
-        route=""
+        route="/student/modules/B1/L1"
         docs=""
       />
       <CardComp

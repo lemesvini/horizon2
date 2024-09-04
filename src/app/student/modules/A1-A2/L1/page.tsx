@@ -10,6 +10,8 @@ import {
   faCircleArrowRight,
   faCircleCheck,
   faCircleExclamation,
+  faCirclePause,
+  faCirclePlay,
   faCirclePlus,
   faCircleUser,
   faComment,
@@ -28,20 +30,34 @@ const WarmUp = (
       <div className="flex flex-col p-4 border drop-shadow bg-white rounded w-full tablet:w-[60%]">
         <div className="flex flex-row gap-3 items-center">
           <span className="flex w-34 h-34 rounded-full text-4xl">
-            <FontAwesomeIcon icon={faCircleUser} /></span>
+            <FontAwesomeIcon icon={faCircleUser} />
+          </span>
           <div className="flex flex-col">
-            <span className="font-bold">Lex <FontAwesomeIcon icon={faCircleCheck} className="text-blue-600" /></span>
+            <span className="font-bold">
+              Lex{" "}
+              <FontAwesomeIcon icon={faCircleCheck} className="text-blue-600" />
+            </span>
             <span className="text-sm">@LexFromHorizon</span>
           </div>
         </div>
         <br />
-        <span className="self-start">Guys, como posso organizar minha vida para aprender a falar inglês?</span>
-        <span className="py-3 text-sm text-slate-400">9:41 AM - From EARTH</span>
+        <span className="self-start">
+          Guys, como posso organizar minha vida para aprender a falar inglês?
+        </span>
+        <span className="py-3 text-sm text-slate-400">
+          9:41 AM - From EARTH
+        </span>
         <hr />
         <div className="flex flex-row w-full justify-around pt-3">
-          <span><FontAwesomeIcon icon={faComment} /> 15</span>
-          <span><FontAwesomeIcon icon={faRetweet} /> 4</span>
-          <span><FontAwesomeIcon icon={faHeart} /> 97</span>
+          <span>
+            <FontAwesomeIcon icon={faComment} /> 15
+          </span>
+          <span>
+            <FontAwesomeIcon icon={faRetweet} /> 4
+          </span>
+          <span>
+            <FontAwesomeIcon icon={faHeart} /> 97
+          </span>
         </div>
       </div>
     </div>
@@ -162,7 +178,7 @@ const Vocab = (
 const Input = (
   <>
     <div className="w-full h-full snap-y snap-mandatory overflow-y-scroll no-scrollbar">
-      <div className="w-full h-full p-2 snap-start">
+      <div className="w-full laptop:h-full p-2 snap-start">
         <div className="bg-white w-full h-full rounded-lg drop-shadow">
           <div className="w-full flex flex-row items-center p-3 pt-4 text-3xl font-bold text-[#123572]">
             <FontAwesomeIcon icon={faCirclePlus} className="pl-3" />
@@ -179,7 +195,9 @@ const Input = (
               </p>
               <div className="w-full p-2 mt-2 text-[#525252] flex flex-row items-center gap-2">
                 <FontAwesomeIcon icon={faCircleExclamation} />
-                <p>Consonant = not {"'"}A, E, I, O, U{"'"}</p>
+                <p>
+                  Consonant = not {"'"}A, E, I, O, U{"'"}
+                </p>
               </div>
               {/* <hr className="mt-2" /> */}
               <div className="flex flex-col gap-2 laptop:h-[50dvh] justify-evenly mb-4 p-2 border rounded-lg">
@@ -225,7 +243,9 @@ const Input = (
               </p>
               <div className="w-full p-2 mt-2 text-[#525252] flex flex-row items-center gap-2">
                 <FontAwesomeIcon icon={faCircleExclamation} />
-                <p>Vowel = {"'"}A, E, I, O, U{"'"}</p>
+                <p>
+                  Vowel = {"'"}A, E, I, O, U{"'"}
+                </p>
               </div>
               {/* <hr className="mt-2" /> */}
               <div className="flex flex-col gap-2 laptop:h-[50dvh] justify-evenly mb-4 p-2 border rounded-lg">
@@ -375,7 +395,8 @@ const Input = (
                     icon={faFeatherPointed}
                     className="text-[#123570]"
                   />{" "}
-                  You <strong className="text-[#9E2A2B] text-xl">aren{"'"}t</strong>{" "}
+                  You{" "}
+                  <strong className="text-[#9E2A2B] text-xl">aren{"'"}t</strong>{" "}
                   a teacher.
                 </p>
                 <p>
@@ -433,7 +454,8 @@ const Input = (
                     icon={faFeatherPointed}
                     className="text-[#123570]"
                   />{" "}
-                  He <strong className="text-[#9E2A2B] text-xl">isn{"'"}t</strong>{" "}
+                  He{" "}
+                  <strong className="text-[#9E2A2B] text-xl">isn{"'"}t</strong>{" "}
                   happy.
                 </p>
                 <p>
@@ -491,6 +513,20 @@ const Practice = (
 );
 
 function LessonOne() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  // const audioRef = useRef(new Audio(audioFile));
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      // audioRef.current.pause();
+      console.log("audio toggled");
+    } else {
+      // audioRef.current.play();
+      console.log("audio toggled");
+    }
+    setIsPlaying(!isPlaying);
+  };
+
   const [selectedPage, setSelectedPage] = useState("Item1");
 
   const user = auth.currentUser;
@@ -528,6 +564,15 @@ function LessonOne() {
               >
                 <FontAwesomeIcon icon={faSpellCheck} className="px-2" />
                 <span className="hidden laptop:inline"> Vocabulary</span>
+                {/* <audio src="./lesson1.mp3"></audio> */}
+                <button
+                  className="absolute items-center justify-center mx-2 w-6 h-6 hover:text-blue-600"
+                  onClick={togglePlayPause}
+                >
+                  <FontAwesomeIcon
+                    icon={isPlaying ? faCirclePause : faCirclePlay}
+                  />
+                </button>
               </button>
               <button
                 className={buttonClasses("Item3")}

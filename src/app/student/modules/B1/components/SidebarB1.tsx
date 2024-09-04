@@ -8,6 +8,11 @@ import {
   faCircleUser,
   faSquarePlus,
 } from "@fortawesome/free-solid-svg-icons";
+import { auth } from "@/firebase";
+
+const userName = auth.currentUser?.displayName;
+const userEmail = auth.currentUser?.email;
+const userImg = auth.currentUser?.photoURL;
 
 const ResponsiveComponent = () => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -41,16 +46,24 @@ const Sidebar = ({
   return (
     <div className="flex">
       <div className="fixed flex flex-col text-black h-14 laptop:h-[93%] m-2 w-[98%] laptop:m-3 laptop:left-0 bg-white rounded-lg laptop:bottom-4 laptop:w-60 top-14 drop-shadow-md">
-        <div className="hidden mt-3 mb-3 laptop:items-center laptop:flex laptop:flex-row laptop:h-16 laptop:w-full">
-          <FontAwesomeIcon
-            icon={faCircleUser}
-            className="text-4xl p-3 text-[#0A3153]"
-          />
+      <div className="hidden mt-3 mb-3 laptop:items-center justify-center laptop:flex laptop:flex-row laptop:h-16 laptop:w-full">
+          {userImg ? (
+            <img
+              src={userImg}
+              alt="User profile"
+              className="w-12 h-12 rounded-full p-1"
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={faCircleUser}
+              className="text-4xl p-3 text-[#0A3153]"
+            />
+          )}
           <div className="flex flex-col">
             <p>
-              <strong>NOME</strong>
+              <strong>{userName}</strong>
             </p>
-            <p className="text-xs">email@user.com</p>
+            <p className="text-xs">{userEmail}</p>
           </div>
         </div>
         <div className="hidden laptop:flex laptop:w-[90%] laptop:self-center laptop:rounded-xl laptop:bg-[#27823f] laptop:items-center laptop:h-12 laptop:text-center mb-3">
@@ -59,7 +72,7 @@ const Sidebar = ({
           </p>
         </div>
         <hr className="hidden laptop:flex laptop:w-[90%] self-center" />
-        <div className="flex w-full h-14 justify-evenly h-fit text-[#0A3153] p-3 text-xl laptop:flex-col laptop:justify-start">
+        <div className="flex w-full h-14 justify-evenly text-[#0A3153] p-3 text-xl laptop:flex-col laptop:justify-start">
           <button
             className={`text-left mb-3 ${
               selectedButton === "Item1"
