@@ -1,8 +1,5 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSquarePlus } from "@fortawesome/free-regular-svg-icons";
 
 function StepCard(props: any) {
   return (
