@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default function InputSimple(props: any) {
   return (
-    <div className="w-full h-full snap-y snap-mandatory overflow-y-scroll no-scrollbar">
+    <div className="w-full laptop:h-full snap-y snap-start">
       <div className="w-full h-full p-2 snap-start">
         <div className="bg-white w-full h-full flex flex-col rounded-lg drop-shadow">
           <div className="w-full flex flex-row items-center p-3 pt-4 text-3xl font-bold text-[#123572]">
@@ -19,10 +19,10 @@ export default function InputSimple(props: any) {
           </div>
           <div className="w-[90%] h-fit tablet:h-3/5 rounded gap-4 px-4 flex flex-col tablet:justify-around p-2 tablet:flex-row self-center border mt-4">
               <div>
-                {props.ex1}
+                {props.col1}
               </div>
               <div>
-                {props.ex2}
+                {props.col2}
               </div>
           </div>
         </div>

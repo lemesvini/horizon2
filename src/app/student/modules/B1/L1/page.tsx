@@ -21,10 +21,10 @@ import {
   faSpellCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import InputSimple from "../components/InputSimple";
-import Input3col from "../components/Input3col";
+import Input1col from "../components/input1col";
 
 const LTitle = "LESSON ONE";
-const TitleColor = "#335C67";
+const TitleColor = "#84A59D";
 const WarmUp = (
   <div className="w-full h-full p-2">
     <div className="flex w-full h-[100%] rounded-lg items-center gap-2 justify-center flex-col ">
@@ -43,7 +43,8 @@ const WarmUp = (
         </div>
         <br />
         <span className="self-start">
-          Guys, como posso organizar minha vida para aprender a falar inglês?
+          Hey, there! What's your favorite holiday? Where do you like to spend
+          it?
         </span>
         <span className="py-3 text-sm text-slate-400">
           9:41 AM - From EARTH
@@ -70,150 +71,160 @@ const Vocab = (
       <div className="w-full h-full flex flex-wrap">
         <div className="bg-white h-[49%] w-full rounded-lg laptop:w-[48%] m-1 flex flex-col justify-evenly">
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">Hello</p>
-            <p className="font-extralight">Olá</p>
+            <p className="font-bold">Gathering / Get-Together</p>
+            <p className="font-extralight">Reunião, Encontro</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">Hi</p>
-            <p className="font-extralight">Oi</p>
+            <p className="font-bold">Celebration</p>
+            <p className="font-extralight">Celebração</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">How are you?</p>
-            <p className="font-extralight">Como vai?</p>
+            <p className="font-bold">Holiday</p>
+            <p className="font-extralight">Feriado</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">What{"'"}s up?</p>
-            <p className="font-extralight">E ai?</p>
+            <p className="font-bold">Event</p>
+            <p className="font-extralight">Evento</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">Bye</p>
-            <p className="font-extralight">Tchau</p>
+            <p className="font-bold">Date</p>
+            <p className="font-extralight">Encontro/Data</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2">
-            <p className="font-bold">Goodbye</p>
-            <p className="font-extralight">Adeus</p>
+            <p className="font-bold">Christmas</p>
+            <p className="font-extralight">Natal</p>
           </div>
         </div>
         <div className="bg-white h-[49%] w-full rounded-lg laptop:w-[48%] m-1 flex flex-col justify-evenly">
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">I{"'"}m fine</p>
-            <p className="font-extralight">Estou bem</p>
+            <p className="font-bold">New Year’s Eve</p>
+            <p className="font-extralight">Véspera de Ano Novo</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">I{"'"}m great</p>
-            <p className="font-extralight">Estou ótimo</p>
+            <p className="font-bold">Easter</p>
+            <p className="font-extralight">Páscoa</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">Excuse me</p>
-            <p className="font-extralight">Com licença</p>
+            <p className="font-bold">Carnival</p>
+            <p className="font-extralight">Carnaval</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">Please</p>
-            <p className="font-extralight">Por favor</p>
+            <p className="font-bold">Hoedown</p>
+            <p className="font-extralight">Festa Junina</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">Thank you</p>
-            <p className="font-extralight">Obrigado(a)</p>
+            <p className="font-bold">As long As</p>
+            <p className="font-extralight">Contanto que</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2">
-            <p className="font-bold">Can you repeat, please?</p>
-            <p className="font-extralight">Pode repetir, por favor?</p>
+            <p className="font-bold">Therefore</p>
+            <p className="font-extralight">Logo</p>
           </div>
         </div>
         <div className="bg-white h-[49%] w-full rounded-lg laptop:w-[48%] m-1 flex flex-col justify-evenly">
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">I</p>
-            <p className="font-extralight">Eu</p>
+            <p className="font-bold">to Travel / Traveled / Traveled</p>
+            <p className="font-extralight">Viajar</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">You</p>
-            <p className="font-extralight">Você</p>
+            <p className="font-bold">Trip</p>
+            <p className="font-extralight">Viagem, Passeio</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">We</p>
-            <p className="font-extralight">Nós</p>
+            <p className="font-bold">Roadtrip</p>
+            <p className="font-extralight">Viagem de carro</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">They</p>
-            <p className="font-extralight">Eles, Elas</p>
+            <p className="font-bold">to Visit / Visited / Visited</p>
+            <p className="font-extralight">Visitar</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">A / An</p>
-            <p className="font-extralight">Um, Uma</p>
+            <p className="font-bold">to Enjoy / Enjoyed / Enjoyed</p>
+            <p className="font-extralight">Aproveitar, gostar</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2">
-            <p className="font-bold">The</p>
-            <p className="font-extralight">O / A / Os / As</p>
+            <p className="font-bold">to Relax / Relaxed / Relaxed</p>
+            <p className="font-extralight">Relaxar</p>
           </div>
         </div>
-        <div className="bg-white h-[49%] w-full  rounded-lg laptop:w-[48%] m-1 flex flex-col justify-evenly">
+        <div className="bg-white h-[49%] w-full rounded-lg laptop:w-[48%] m-1 flex flex-col justify-evenly">
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">to Be / Was, Were / Been</p>
-            <p className="font-extralight">Ser, Estar</p>
+            <p className="font-bold">Even Though / Although</p>
+            <p className="font-extralight">Embora</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">I am (not)</p>
-            <p className="font-extralight">Eu (não) sou / estou</p>
+            <p className="font-bold">While</p>
+            <p className="font-extralight">Enquanto</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">You are (not)</p>
-            <p className="font-extralight">Você (não) é / está</p>
+            <p className="font-bold">to Prepare / Prepared / Prepared</p>
+            <p className="font-extralight">Preparar</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">to Work / Worked / Worked</p>
-            <p className="font-extralight">Trabalhar</p>
+            <p className="font-bold">to Hang Out</p>
+            <p className="font-extralight">Passar tempo Junto</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2 border-b-2 border-dotted">
-            <p className="font-bold">to Study / Studied / Studied </p>
-            <p className="font-extralight">Estudar</p>
+            <p className="font-bold">to Pay (Somebody) A Visit</p>
+            <p className="font-extralight">Visitar Alguém</p>
           </div>
           <div className="w-full flex flex-row justify-between p-2">
-            <p className="font-bold">Teacher</p>
-            <p className="font-extralight">Professor (a)</p>
+            <p className="font-bold">to Unwind</p>
+            <p className="font-extralight">Relaxar</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 );
+
 const examples1 = (
   <>
-    <div className="flex flex-col gap-2 text-lg h-full justify-center">
-      <p>example here</p>
-      <p>example here</p>
-      <p>example here</p>
-      <p>example here</p>
-      <p>example here</p>
-      <p>example here</p>
+    <div className="flex flex-col gap-3 text-lg h-full justify-center">
+      <p>• My mom always cooks on Christmas. The food on Christmas is always delicious.</p>
+      <p>• We were tired. But we had a lot of fun at the gathering.</p>
+      <p>• It{"’"}s possible. We hang out together. </p>
+      <p>• New Year{"’"}s Eve was on a Friday. We decided to travel for the weekend.</p>
     </div>
   </>
 );
 const examples2 = (
   <>
-    <div className="flex flex-col gap-2 text-lg h-full justify-center">
-      <p>example here</p>
-      <p>example here</p>
-      <p>example here</p>
-      <p>example here</p>
-      <p>example here</p>
-      <p>example here</p>
+    <div className="flex flex-col gap-3 text-lg h-full justify-center">
+      <p>• My mom always cooks on Christmas, therefore the food is delicious.</p>
+      <p>• Even though we were tired, we still had a lot of fun at the gathering.</p>
+      <p>• We hang out together whenever it{"’"}s possible.</p>
+      <p>• Since New Year’s Eve was on a Friday, we decided to travel for the weekend.</p>
     </div>
   </>
 );
-const examples3 = (
-    <>
-      <div className="flex flex-col gap-2 text-lg h-full justify-center">
-        <p>example here</p>
-        <p>example here</p>
-        <p>example here</p>
-        <p>example here</p>
-        <p>example here</p>
-        <p>example here</p>
-      </div>
-    </>
-  );
+const examples4 = (
+  <>
+    <div className="flex flex-col gap-2 text-lg h-full justify-center">
+      <p>• <strong>How long does it take to</strong> get there?</p>
+      <p>• <strong>How long does it take to</strong> set off the fireworks?</p>
+      <p>• <strong>How long does it take to</strong> prepare the Christmas dinner?</p>
+      <p>• <strong>How long does it take <i className="font-normal">them</i> to</strong> get ready?</p>
+      <p>• <strong>How long does it take <i className="font-normal">you</i> to</strong> prepare breakfast?</p>
+    </div>
+  </>
+);
 const Input = (
-  <Input3col title="teste" redTitle="teste 2" col1={examples1} col2={examples2} col3={examples3}/>
+  <>
+    <div className="w-full h-full laptop:snap-y laptop:snap-mandatory overflow-y-scroll no-scrollbar">
+      <InputSimple
+        title="Sentence Structure"
+        redTitle="Complex Sentence Structures"
+        col1={examples1}
+        col2={examples2}
+      />
+      <Input1col
+        title="How Long Does It Take To…?"
+        redTitle="We use this chunk to talk about time, this is the structure when the question is about an action:"
+        col1={examples4}
+      />
+    </div>
+  </>
 );
 const Practice = (
   <div className="w-full h-full p-2">
@@ -223,19 +234,12 @@ const Practice = (
           Conversation Starter
         </h3>
         <h4 className="w-full p-4">
-          Complete the dialog and practice with your teacher!
+          Answer the questions below:
         </h4>
         <div className="w-full flex flex-col p-3 gap-4 h-fit bg-[#F3F5F7] rounded-xl justify-center pl-4">
-          <p>
-            A: Hello! _________ teacher Lex! And you,{" "}
-            <strong>what’s your name?</strong>
-          </p>
-          <p>B: Hey, teacher! I’m _________.</p>
-          <p>A: How are you doing?</p>
-          <p>B: _________, and you?</p>
-          <p>
-            A: <strong>I’m great! </strong>Thanks!
-          </p>
+          <p>What's the best memory you have of Christmas?</p>
+          <p>Where do you like to spend New Year's Eve?</p>
+          <p>What was your favorite holiday when you were a child?</p>
         </div>
       </div>
       <div className="hidden laptop:flex w-[36%] ">
