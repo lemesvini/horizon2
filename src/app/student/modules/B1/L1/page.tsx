@@ -7,13 +7,10 @@ import PracticeImg from "../../../../../../public/src/practice1img.png";
 import LHeader from "../../../components/header";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faCircleArrowRight,
   faCircleCheck,
-  faCircleExclamation,
   faCirclePlus,
   faCircleUser,
   faComment,
-  faFeatherPointed,
   faFire,
   faHeart,
   faPen,
@@ -21,7 +18,7 @@ import {
   faSpellCheck,
 } from "@fortawesome/free-solid-svg-icons";
 import InputSimple from "../components/InputSimple";
-import Input1col from "../components/input1col";
+import Input1col from "../components/Input1col";
 
 const LTitle = "LESSON ONE";
 const TitleColor = "#84A59D";
