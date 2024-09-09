@@ -61,7 +61,7 @@ export default function SectionTwo() {
           >
             <StepCard
               title="Done!"
-              description="You're ready to start your classes! You can edit the Student's Details at any time to go to grant them access to a new module or change their email account."
+              description="You're ready to start your classes! You can edit the Student's Details at any time to grant them access to a new module or change their email account."
             />
           </motion.div>
         </div>
