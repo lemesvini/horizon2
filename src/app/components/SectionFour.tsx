@@ -3,13 +3,20 @@ import { motion } from "framer-motion";
 
 function StepCard(props: any) {
   return (
-    <div className="w-80 h-96 bg-white flex flex-col rounded-xl drop-shadow-lg">
-      <div className="w-full border-b-2 h-24 p-2 items-center justify-center flex">
-        <span className="text-4xl font-bold text-blue-500">{props.title}</span>
+    <div className="w-80 h-80 bg-white flex flex-col rounded-2xl drop-shadow-lg">
+      <div className="w-full h-24 p-4 flex items-center justify-start border-b border-gray-300">
+        <span className="text-2xl font-semibold text-gray-900">
+          {props.title}
+        </span>
       </div>
-      <div className="flex p-6 text-lg leading-loose text-justify">
+      <div className="flex p-6 text-lg text-gray-700 leading-relaxed">
         <p>{props.description}</p>
       </div>
+      {/* <div className="flex justify-end p-4">
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-full shadow-md hover:bg-blue-600 transition duration-300">
+          Action
+        </button>
+      </div> */}
     </div>
   );
 }
@@ -20,13 +27,15 @@ export default function SectionTwo() {
       <motion.div
         className="bg-slate-100 tablet:pt-0 m-3 pb-3 tablet:h-[70dvh] flex flex-col justify-center items-center "
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        whileInView={{ opacity: 1 }}
       >
-        <span className="font-bold text-xl tablet:text-2xl p-4 mt-12 text-slate-600">New Student step-by-step:</span>
+        <span className="font-bold text-xl tablet:text-2xl p-4 mt-12 text-slate-600">
+          New Student step-by-step:
+        </span>
         <div className="flex flex-col mb-12 tablet:flex-row justify-center items-center gap-2">
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             transition={{ delay: 0.2 }}
           >
             <StepCard
@@ -36,7 +45,7 @@ export default function SectionTwo() {
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
             <StepCard
@@ -46,7 +55,7 @@ export default function SectionTwo() {
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             transition={{ delay: 1 }}
           >
             <StepCard
@@ -56,7 +65,7 @@ export default function SectionTwo() {
           </motion.div>
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
             transition={{ delay: 1.5 }}
           >
             <StepCard

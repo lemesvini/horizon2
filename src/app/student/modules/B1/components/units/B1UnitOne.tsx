@@ -11,6 +11,7 @@ export default function B1UnitOne() {
         description="Holidays"
         content="Complex Sentence Structure"
         color={HeaderColor}
+        revisar="true"
         link="Acessar aula"
         route="/student/modules/B1/L1"
         docs=""
@@ -21,7 +22,8 @@ export default function B1UnitOne() {
         content="Past Continuous Tense"
         color={HeaderColor}
         link="Acessar aula"
-        route=""
+        revisar="true"
+        route="/student/modules/B1/L2"
         docs=""
       />
       <CardComp
@@ -29,7 +31,8 @@ export default function B1UnitOne() {
         description="Comprehension practice"
         content="Listening / Speaking activities"
         color={HeaderColor}
-        link="Acessar aula"
+        revisar="false"
+        link="Acessar aula sugerida"
         route=""
         docs=""
       />
@@ -38,6 +41,7 @@ export default function B1UnitOne() {
         description="Out and about!"
         content="ALTERAR PLANEJAMENTO!"
         color={HeaderColor}
+        revisar="true"
         link="Acessar aula"
         route=""
         docs=""
@@ -47,6 +51,7 @@ export default function B1UnitOne() {
         description="XOXO, Gossip Girl!"
         content="Reported Speech"
         color={HeaderColor}
+        revisar="true"
         link="Acessar aula"
         route=""
         docs=""
@@ -56,7 +61,7 @@ export default function B1UnitOne() {
         description="Comprehension practice"
         content="Listening / Speaking activities"
         color={HeaderColor}
-        link="Acessar aula"
+        link="Acessar aula sugerida"
         route=""
         docs=""
       />
@@ -65,6 +70,7 @@ export default function B1UnitOne() {
         description="Advices!"
         content="Indefinite Pronouns"
         color={HeaderColor}
+        revisar="true"
         link="Acessar aula"
         route=""
         docs=""
@@ -73,6 +79,7 @@ export default function B1UnitOne() {
         title="Lesson 8"
         description="NOVA AULA"
         content="NOVA AULA"
+        revisar="true"
         color={HeaderColor}
         link="Acessar aula"
         route=""
@@ -83,6 +90,7 @@ export default function B1UnitOne() {
         description="CONTENT RECAP"
         content="Lessons 1 - 8"
         color={HeaderColor}
+        revisar="true"
         link="Acessar aula"
         route=""
         docs=""

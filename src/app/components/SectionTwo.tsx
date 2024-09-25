@@ -7,11 +7,12 @@ export default function SectionTwo() {
   return (
     <>
       <motion.div
-        className="bg-slate-100 h-[70dvh] flex justify-center items-center"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
+        className="h-[70dvh] flex justify-center items-center"
+        initial={{ scale: 0.95 }}
+        whileInView={{ scale: 1 }}
+        viewport={{ amount: 0.5 }}
       >
-        <div className="flex w-[93%] laptop:w-[80%] h-[80%] drop-shadow-lg rounded-2xl  bg-white justify-between">
+        <div className="flex w-[93%] laptop:w-[80%] h-[80%] drop-shadow rounded-2xl border border-slate-200   bg-white justify-between">
           <div className="flex flex-col p-12 justify-center items-center grow gap-2 text-justify">
             <p className="text-xl tablet:text-3xl mb-6 font-bold text-blue-500">Go Beyond the Horizon</p>
             <p className="text-slate-600">

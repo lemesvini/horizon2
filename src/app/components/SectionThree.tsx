@@ -19,7 +19,7 @@ export default function SectionThree() {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="relative flex flex-col bg-white w-full h-80 tablet:h-screen  items-center justify-center p-1 tablet:p-12"
+      className="relative flex flex-col bg-white w-full items-center justify-center p-1 tablet:p-12"
     >
       {/* <span className="text-white font-bold text-3xl pt-6">Teacher{"'"}s Dashboard</span> */}
       <Carousel
@@ -29,22 +29,19 @@ export default function SectionThree() {
       >
         <Carousel.Item>
           <div className="relative w-full h-full p-10 flex flex-col items-center justify-center">
-            <span className="font-bold text-2xl text-blue-600 border-b-2">Teacher{"'"}s Dashboard</span>
-            <br />
+            <span className="font-bold text-2xl bg-blue-500 text-white p-3 rounded-lg mb-4">Teacher{"'"}s Dashboard</span>
             <Image src={PC1} alt="First slide" width={600} height={600} />
           </div>
         </Carousel.Item>
         <Carousel.Item>
           <div className="relative w-full h-full p-10 flex flex-col items-center justify-center">
-            <span className="font-bold text-2xl text-blue-600 border-b-2">Students Table</span>
-            <br />
+            <span className="font-bold text-2xl bg-blue-500 text-white p-3 rounded-lg mb-4">Teacher{"'"}s Dashboard - Students Table</span>
             <Image src={PC2} alt="First slide" width={600} height={600} />
           </div>
         </Carousel.Item>
         <Carousel.Item>
           <div className="relative w-full h-full p-10 flex flex-col items-center justify-center">
-            <span className="font-bold text-2xl text-blue-600 border-b-2">Class Records</span>
-            <br />
+            <span className="font-bold text-2xl bg-blue-500 text-white p-3 rounded-lg mb-4">Teacher{"'"}s Dashboard - Class Records</span>
             <Image src={PC3} alt="First slide" width={600} height={600} />
           </div>
         </Carousel.Item>

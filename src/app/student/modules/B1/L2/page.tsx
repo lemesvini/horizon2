@@ -5,8 +5,7 @@ import Cover from "./svgs/cover.svg";
 import WarmUp from "./svgs/warmup.svg";
 import Vocab from "./svgs/vocab1.svg";
 import Vocab2 from "./svgs/vocab2.svg";
-import input1 from "./svgs/input1.svg";
-import input2 from "./svgs/input2.svg";
+import Input from "./svgs/input.svg";
 import Practice from "./svgs/practice.svg";
 import ConverOut from "./svgs/coverout.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -20,11 +19,11 @@ import Image from "next/image";
 
 import { auth } from "@/firebase";
 
-export default function B1L1() {
+export default function B1L2() {
   const user = auth.currentUser;
   const router = useRouter();
 
-  const images = [Cover, WarmUp, Vocab, Vocab2, input1, input2, Practice, ConverOut]; // Array of images
+  const images = [Cover, WarmUp, Vocab, Vocab2, Input, Practice, ConverOut]; // Array of images
   const [currentIndex, setCurrentIndex] = useState(0); // Track the current image index
   const [isGalleryOpen, setIsGalleryOpen] = useState(false); // Track if gallery view is open
 

@@ -5,6 +5,7 @@ import SectionOne from "./components/SectionOne";
 import SectionTwo from "./components/SectionTwo";
 import SectionThree from "./components/SectionThree";
 import SectionFour from "./components/SectionFour";
+import SectionFive from "./components/SectionFive";
 import Footer from "./components/Footer";
 
 const sectionVariants: Variants = {
@@ -27,16 +28,24 @@ export default function Home() {
   return (
     <>
       <LPHeader />
-
       <SectionOne />
-
       <motion.div
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
-        variants={sectionVariants}
+        // initial="offscreen"
+        // whileInView="onscreen"
+        // viewport={{ once: true, amount: 0.8 }}
+        // variants={sectionVariants}
+        className="bg-white"
       >
         <SectionTwo />
+      </motion.div>
+
+      <motion.div
+        // initial="offscreen"
+        // whileInView="onscreen"
+        // viewport={{ once: true, amount: 0.8 }}
+        // variants={sectionVariants}
+      >
+        <SectionFive />
       </motion.div>
 
       <motion.div
@@ -49,14 +58,17 @@ export default function Home() {
       </motion.div>
 
       <motion.div
-        initial="offscreen"
-        whileInView="onscreen"
-        viewport={{ once: true, amount: 0.8 }}
-        variants={sectionVariants}
+        // initial="offscreen"
+        // whileInView="onscreen"
+        // viewport={{ once: true, amount: 0.8 }}
+        // variants={sectionVariants}
       >
         <SectionFour />
       </motion.div>
+      <div className="">
       <Footer />
+      </div>
+      
     </>
   );
 }

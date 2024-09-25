@@ -39,22 +39,35 @@ function CardComp(props: any) {
           {props.content}
         </p>
         <div className="flex justify-between">
-          <Link href={DocsRoute} target="_blank" className="w-[48%]">
-            <Button
-              variant="outline-success"
-              className="p-2 rounded-lg hover:text-white w-full"
-            >
-              Revisar
-            </Button>
-          </Link>
-          <Link href={LessonRoute} className="w-[48%]">
-            <Button
-              className="p-2 rounded-lg hover:text-white w-full"
-              variant="outline-primary"
-            >
-              {props.link}
-            </Button>
-          </Link>
+          {props.revisar === "true" ? (
+            <>
+              <Link href={DocsRoute} target="_blank" className="w-[48%]">
+                <Button
+                  variant="outline-success"
+                  className="p-2 rounded-lg hover:text-white w-full"
+                >
+                  Revisar
+                </Button>
+              </Link>
+              <Link href={LessonRoute} className="w-[48%]">
+                <Button
+                  className="p-2 rounded-lg hover:text-white w-full"
+                  variant="outline-primary"
+                >
+                  {props.link}
+                </Button>
+              </Link>
+            </>
+          ) : (
+            <Link href={LessonRoute} className="w-full">
+              <Button
+                className="p-2 rounded-lg hover:text-white w-full"
+                variant="outline-primary"
+              >
+                {props.link}
+              </Button>
+            </Link>
+          )}
         </div>
       </CardBody>
     </Card>
