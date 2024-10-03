@@ -24,7 +24,7 @@ export default function LPHeader() {
     <div className="bg-white drop-shadow flex h-20 justify-center items-center w-full gap-2">
       <div className="flex gap-8 text-slate-500">
         <motion.div
-          className="absolute left-5 hover:cursor-pointer self-center"
+          className="hidden tablet:flex absolute left-5 hover:cursor-pointer self-center"
           initial={{ opacity: 0, scale: 0 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "Tween" }}
@@ -57,7 +57,7 @@ export default function LPHeader() {
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.6, type: "Tween", stiffness: 10 }}
-            onClick={goToDocs}
+            onClick={() => alert("Something went wrong... Try again later!")}
           >
             Documentação
           </motion.div>

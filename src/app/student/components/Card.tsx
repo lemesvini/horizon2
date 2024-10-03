@@ -46,7 +46,7 @@ function CardComp(props: any) {
                   variant="outline-success"
                   className="p-2 rounded-lg hover:text-white w-full"
                 >
-                  Revisar
+                  E-Book
                 </Button>
               </Link>
               <Link href={LessonRoute} className="w-[48%]">

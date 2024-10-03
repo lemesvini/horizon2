@@ -3,12 +3,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Cover from "./svgs/cover.svg";
 import WarmUp from "./svgs/warmup.svg";
-import Vocab from "./svgs/vocab1.svg";
-import Vocab2 from "./svgs/vocab2.svg";
-import Input from "./svgs/input.svg";
-import Input2 from "./svgs/input2.svg";
-import Input3 from "./svgs/input3.svg";
-import Practice from "./svgs/practice.svg";
+import Input1 from "./svgs/input1.svg"
+import Input2 from "./svgs/input2.svg"
+import Input3 from "./svgs/input3.svg"
+import Input4 from "./svgs/input4.svg"
+import Input5 from "./svgs/input5.svg"
+import Input6 from "./svgs/input6.svg"
 import ConverOut from "./svgs/coverout.svg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -25,7 +25,7 @@ export default function B1L2() {
   const user = auth.currentUser;
   const router = useRouter();
 
-  const images = [Cover, WarmUp, Vocab, Vocab2, Input, Input2, Input3, Practice, ConverOut]; // Array of images
+  const images = [Cover, WarmUp, Input1, Input2, Input3, Input4, Input5, Input6, ConverOut]; // Array of images
   const [currentIndex, setCurrentIndex] = useState(0); // Track the current image index
   const [isGalleryOpen, setIsGalleryOpen] = useState(false); // Track if gallery view is open
 

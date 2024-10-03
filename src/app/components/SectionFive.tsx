@@ -55,7 +55,7 @@ export default function SectionFive() {
             badge="18 Lesson Plans"
             desc="► 18 lesson plans"
             desc2="► Student's E-book"
-            link="/docs/moduleA1A2"
+            link="/docs/mdd#mdda1a2"
           />
           <ProdCard
             badgebgcolor="#cc4b54"
@@ -64,7 +64,7 @@ export default function SectionFive() {
             badge="18 Lesson Plans"
             desc="► 30 lesson plans"
             desc2="► Student's E-book"
-            link="/docs/moduleB1"
+            link="/docs/mdd#mddb1"
           />
           <ProdCard
             badgebgcolor="#cc4b54"
@@ -73,7 +73,7 @@ export default function SectionFive() {
             badge="18 Lesson Plans"
             desc=""
             desc2="Coming Soon..."
-            link="/docs/moduleB2"
+            link="/"
           />
           {/* <ProdCard
             badgebgcolor="#cc4b54"
@@ -90,7 +90,7 @@ export default function SectionFive() {
             badge="18 Lesson Plans"
             desc="► Monthly Updated"
             desc2="► Practice focused"
-            link="/docs/moduleA1A2conv"
+            link="/docs/mdd#mddConv"
           />
           <ProdCard
             badgebgcolor="#cc4b54"
@@ -99,7 +99,7 @@ export default function SectionFive() {
             badge="18 Lesson Plans"
             desc="► Monthly Updated"
             desc2="► Choose from gallery"
-            link="/docs/moduleB1conv"
+            link="/docs/mdd#mddConv"
           />
         </div>
         <h2 className="font-bold text-xl text-blue-500 p-6">

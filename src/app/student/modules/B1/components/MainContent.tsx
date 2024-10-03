@@ -7,19 +7,11 @@ import B1UnitTwo from "./units/B1UnitTwo";
 import B1UnitThree from "./units/B1UnitThree";
 
 const One = (
-  <div className="w-full mt-24 laptop:mt-14">
-    <div className="p-4 flex flex-row flex-wrap gap-4">
-      <p className="text-2xl font-semibold pt-2">Unit One</p>
-      <div className="flex flex-row flex-wrap gap-4 justify-center">
+  <div className="w-full">
+    <div className="p-4 flex flex-row flex-wrap gap-4 w-full justify-center">
+      <p className="text-2xl font-semibold pt-2 text-center w-full">Unit One</p>
+      <div className="flex flex-row flex-wrap gap-4 justify-center max-w-[1080px] ">
         <B1UnitOne />
-      </div>
-      <p className="text-2xl font-semibold pt-2">Unit Two</p>
-      <div className="flex flex-row flex-wrap gap-4 justify-center">
-        {/* <B1UnitTwo /> */}
-      </div>
-      <p className="text-2xl font-semibold pt-2">Unit Three</p>
-      <div className="flex flex-row flex-wrap gap-4 justify-center">
-        {/* <B1UnitThree /> */}
       </div>
     </div>
   </div>
@@ -29,10 +21,10 @@ const Three = ("");
 
 const MainContent = ({ selectedPage }: { selectedPage: string }) => {
   return (
-    <div className="z-1 flex justify-center laptop:ml-64">
+    <div className="z-1 flex justify-center">
       {selectedPage === "Item1" && One}
-      {selectedPage === "Item2" && Two}
-      {selectedPage === "Item3" && Three}
+      {/* {selectedPage === "Item2" && Two}
+      {selectedPage === "Item3" && Three} */}
     </div>
   );
 };

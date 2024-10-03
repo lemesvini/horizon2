@@ -1,8 +1,7 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
-import NavBar from "@/components/NavBar";
-import Sidebar from "./components/SidebarB1";
+import B1NavBar from "./components/B1Header";
 import MainContent from "./components/MainContent";
 import { auth } from "@/firebase";
 import { useRouter } from "next/navigation";
@@ -16,9 +15,9 @@ export default function Home() {
     return (
       <>
         <div>
-          <NavBar />
+          <B1NavBar />
           <MainContent selectedPage={selectedPage} />
-          <Sidebar setSelectedPage={setSelectedPage} />
+          {/* <Sidebar setSelectedPage={setSelectedPage} /> */}
         </div>
       </>
     );
