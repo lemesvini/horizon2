@@ -15,8 +15,7 @@ export default function ChooseLogin() {
 
   return (
     <div
-      className="relative flex p-2 h-screen w-full bg-cover bg-center bg-no-repeat items-center justify-center"
-      style={{ backgroundImage: `url(${fundo.src})` }}
+      className="relative flex p-2 h-screen w-full bg-cover bg-center bg-no-repeat items-center justify-center bg-[#18477B]"
     >
       <div className="flex flex-col items-center justify-center gap-6 bg-white h-fit py-12 px-12 w-fit rounded-xl drop-shadow-xl">
         <p className="text-[#18477B] text-2xl font-bold">I am a...</p>

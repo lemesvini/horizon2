@@ -2,7 +2,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
-import fundo from "../../../../public/src/fundo.png";
 import logo from "@/app/src/logofinalpreenchida.png";
 import { auth } from "@/firebase"; // Import Google sign-in method
 import {
@@ -69,8 +68,8 @@ export default function Login() {
 
   return (
     <div
-      className="relative flex p-2 h-screen w-full bg-cover bg-center bg-no-repeat items-center justify-center"
-      style={{ backgroundImage: `url(${fundo.src})` }}
+      className="relative flex p-2 h-screen w-full bg-cover bg-center bg-no-repeat items-center justify-center bg-[#18477B]"
+     
     >
       <div className="flex flex-col bg-white drop-shadow border rounded-xl h-fit w-fit py-12 px-12 justify-evenly items-center">
         <Image

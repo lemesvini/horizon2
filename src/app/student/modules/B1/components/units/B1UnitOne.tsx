@@ -31,12 +31,12 @@ export default function B1UnitOne() {
         description="Comprehension practice"
         content="Listening / Speaking activities"
         color={HeaderColor}
-        revisar="false"
-        link="Acessar aula sugerida"
+        revisar="true"
+        link="Aula sugerida"
         route="/student/modules/B1/L3"
-        docs=""
+        docs="https://firebasestorage.googleapis.com/v0/b/horizon-db7c1.appspot.com/o/B1MODULE%2FB1L3.pdf?alt=media&token=f42917be-635e-4277-8c3a-3ac163cda4ad"
       />
-      {/* <CardComp
+      <CardComp
         title="Lesson 4"
         description="ZIP Code"
         content="Reported Speech | Prepositions"
@@ -44,9 +44,9 @@ export default function B1UnitOne() {
         revisar="true"
         link="Acessar aula"
         route="/student/modules/B1/L4"
-        docs=""
+        docs="https://firebasestorage.googleapis.com/v0/b/horizon-db7c1.appspot.com/o/B1MODULE%2FB1L4P1_merged.pdf?alt=media&token=c491350d-6a06-494a-b28a-a2327850c99b"
       />
-      <CardComp
+      {/*<CardComp
         title="Lesson 5"
         description="Is there anybody?"
         content="Indefinite Pronouns"
@@ -108,4 +108,3 @@ export default function B1UnitOne() {
     </>
   );
 }
-;

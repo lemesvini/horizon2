@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "react-bootstrap";
 import logo from "@/app/src/logofinalpreenchida.png";
-import fundo from "../../../../public/src/fundo.png";
 import { auth } from "@/firebase"; // Import Google sign-in method
 import { GoogleAuthProvider, signInWithPopup } from "firebase/auth"; // Import necessary Firebase auth methods
 import { getFirestore, doc, getDoc } from "firebase/firestore";
@@ -52,8 +51,8 @@ export default function Login() {
 
   return (
     <div
-      className="relative flex p-2 h-screen w-full bg-cover bg-center bg-no-repeat items-center justify-center"
-      style={{ backgroundImage: `url(${fundo.src})` }}
+      className="relative bg-[#18477B] flex p-2 h-screen w-full bg-cover bg-center bg-no-repeat items-center justify-center"
+      
     >
       <div className="flex flex-col bg-white drop-shadow border rounded-xl h-fit w-fit py-12 px-12 justify-evenly items-center">
         <Image
