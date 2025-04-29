@@ -42,10 +42,10 @@ export default function Login() {
               if (status === "active") {
                 router.push("/teacher/dashboard");
               } else {
-                router.push("/checkout");
+                router.push("/teacher/dashboard");
               }
             } else {
-              router.push("/checkout");
+              router.push("/teacher/dashboard");
             }
             unsubscribe(); // Unsubscribe after the first snapshot
           });
